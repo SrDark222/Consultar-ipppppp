@@ -8,13 +8,13 @@
 body {
   font-family: 'Courier New', monospace;
   background: #1e1e1e;
-  color: #ff0000;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
-  font-size: 1.2rem;
+  overflow-y: scroll;
+  font-size: 1rem;
 }
 
 /* Tela de Carregamento */
@@ -42,16 +42,15 @@ body {
 
 /* Main content */
 #container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  max-width: 600px;
   width: 100%;
+  max-width: 600px;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
   animation: fadeIn 2s ease-out forwards;
   overflow-y: auto;
-  max-height: 80vh;
   margin-bottom: 20px;
 }
 
@@ -106,24 +105,39 @@ button .btn-icon {
 }
 
 /* Detalhes do IP */
-#ip-details {
+#ip-details, #ai-summary {
   margin-top: 20px;
   text-align: left;
-  max-height: 50vh;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
-#ip-result, #location-result, #custom-ip-result {
+#ip-result, #location-result, #ai-summary-result {
   margin-top: 10px;
   padding: 10px;
   background-color: rgba(255, 0, 0, 0.1);
   border-radius: 5px;
   font-size: 1.1rem;
+  color: #fff;
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+}
+
+/* Estilo para as seções de AI e IP */
+#ai-summary {
+  margin-top: 30px;
+  text-align: center;
+  color: #ff0000;
+}
+
+#ai-summary-result {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1.1rem;
 }
 
 /* Animação de Fade In */
@@ -136,4 +150,20 @@ h2 {
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; display: none; }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  #container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  input[type="text"], button {
+    width: 100%;
+  }
+
+  button {
+    font-size: 1rem;
+  }
 }
