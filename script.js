@@ -9,34 +9,34 @@ function consultarIP() {
 
   resultado.innerText = "Consultando IP...";
 
-  fetch(`http://ip-api.com/json/${ip}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`)
+  fetch(`https://ipwho.is/${ip}`)
     .then(response => response.json())
     .then(data => {
-      if (data.status === "success") {
+      if (data.success) {
         resultado.innerText = `
 =====================================
-       CONSULTA IP COMPLETA
+        CONSULTA IP COMPLETA
 =====================================
 
-IP: ${data.query}
-Continente: ${data.continent} (${data.continentCode})
-País: ${data.country} (${data.countryCode})
-Região: ${data.regionName} (${data.region})
+IP: ${data.ip}
+Continente: ${data.continent} (${data.continent_code})
+País: ${data.country} (${data.country_code})
+Região: ${data.region}
 Cidade: ${data.city}
-CEP: ${data.zip}
-Fuso Horário: ${data.timezone}
+CEP: ${data.postal}
+Fuso Horário: ${data.timezone.id}
 
-Latitude: ${data.lat}
-Longitude: ${data.lon}
+Latitude: ${data.latitude}
+Longitude: ${data.longitude}
 
-Provedor (ISP): ${data.isp}
-Organização: ${data.org}
-Sistema Autônomo (AS): ${data.as}
+Provedor (ISP): ${data.connection.isp}
+Tipo de Conexão: ${data.connection.type}
+Organização: ${data.connection.organization}
 
 =====================================
 `;
       } else {
-        resultado.innerText = "Erro: " + data.message;
+        resultado.innerText = "Erro: IP inválido ou não encontrado.";
       }
     })
     .catch(() => {
