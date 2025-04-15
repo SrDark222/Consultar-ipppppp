@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta IP - Detalhado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de Carregamento -->
+  <div id="loading-screen">
+    <div id="loading-text">Aguarde, carregando...</div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="main-content" class="hidden">
+    <div id="container">
+      <h1>Consulta IP - Detalhado</h1>
+      <input type="text" id="ip-input" placeholder="Digite um IP para consultar..." />
+      <button id="fetch-ip-btn">Consultar IP</button>
+
+      <div id="ip-details">
+        <h2>Detalhes do IP:</h2>
+        <div id="ip-result"></div>
+        <div id="location-result"></div>
+        <div id="status"></div>
+      </div>
+      
+      <div id="custom-ip-details">
+        <h2>IP Inserido:</h2>
+        <div id="custom-ip-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
