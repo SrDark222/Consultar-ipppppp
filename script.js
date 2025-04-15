@@ -30,6 +30,7 @@ function fetchIpInfo(userIp) {
       document.getElementById('ip-result').textContent = `IP: ${data[0].ip || data[1].query}`;
       document.getElementById('location-result').textContent = `Localização: ${data[1].city}, ${data[1].region}, ${data[1].country}`;
       document.getElementById('status').textContent = 'Consulta concluída!';
+      summarizeIpDetails(data[0], data[1]);
     })
     .catch(error => {
       document.getElementById('status').textContent = 'Erro ao consultar IP.';
@@ -46,3 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(error => console.error('Erro ao pegar o IP:', error));
 });
+
+// Função para resumir os dados do IP usando a IA
+function summarizeIpDetails(ipData, locationData) {
+  const userDetails = `
+    IP: ${ipData.ip}
+    Localização: ${locationData.city}, ${locationData.region
