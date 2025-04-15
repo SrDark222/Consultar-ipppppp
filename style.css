@@ -1,142 +1,81 @@
-/* Reset para remover margens e padding por padrão */
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Definição do layout básico */
-body, html {
   height: 100%;
-  width: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: black;
   color: white;
-  overflow-x: hidden;
-  position: relative;
+  background: black;
+  overflow: hidden;
 }
 
-/* Fundo animado com o GIF */
-#background-gif {
+.overlay {
+  background: url("assets/fundo.gif") center center / cover no-repeat fixed;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('images/background.gif') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
-  filter: brightness(0.5); /* Ajusta o brilho para dar mais foco ao conteúdo */
-}
-
-/* Layout do conteúdo centralizado */
-.container {
-  position: relative;
-  margin: 50px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 1000px;
-  background: rgba(0, 0, 0, 0.7); /* Transparente, quase preto */
-  border-radius: 10px;
-  border: 2px solid rgba(255, 0, 0, 0.9); /* Borda vermelha estilo neon */
-  text-align: center;
-  z-index: 1;
-}
-
-/* Estilo do título */
-h1 {
-  font-size: 3rem;
-  color: #ff3a3a;
-  text-shadow: 0 0 5px #ff3a3a, 0 0 10px #ff3a3a, 0 0 20px #ff3a3a;
-}
-
-/* Estilo de texto normal */
-p {
-  font-size: 1rem;
-  color: white;
-  margin: 15px 0;
-  text-shadow: 0 0 5px #ff3a3a;
-}
-
-/* Estilo dos botões */
-button {
-  padding: 12px 30px;
-  margin: 10px;
-  background-color: transparent;
-  border: 2px solid #ff3a3a;
-  color: #ff3a3a;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 25px;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #ff3a3a;
-}
-
-/* Efeito de hover nos botões */
-button:hover {
-  background-color: #ff3a3a;
-  color: white;
-  box-shadow: 0 0 20px #ff3a3a;
-}
-
-/* Caixa de texto com borda transparente */
-input[type="text"] {
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid rgba(255, 0, 0, 0.9);
-  background-color: transparent;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 400px;
-  box-sizing: border-box;
-}
-
-/* Estilo para o link */
-a {
-  color: #ff3a3a;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Responsividade para dispositivos móveis */
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  button {
-    padding: 10px 25px;
-    font-size: 1rem;
-  }
-
-  input[type="text"] {
-    width: 100%;
-  }
-}
-
-/* Estilo do rodapé */
-footer {
-  position: absolute;
-  bottom: 10px;
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
-  font-size: 0.8rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 15px red;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid red;
+  border-radius: 10px;
+  background: black;
   color: white;
-  z-index: 1;
+  width: 60%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+.result-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 200px;
+  overflow: auto;
 }
