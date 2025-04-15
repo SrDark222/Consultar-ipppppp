@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background: #000;
-  color: #00ff00;
+  background: #1e1e1e;
+  color: #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,26 +37,27 @@ body {
 }
 
 #loading-text {
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
 
-/* Main content - escondido até carregar */
-.hidden {
-  display: none;
-}
-
-/* Estilo do conteúdo */
+/* Main content */
 #container {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
   padding: 30px;
   text-align: center;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
   animation: fadeIn 2s ease-out forwards;
   overflow-y: auto;
   max-height: 80vh;
+  margin-bottom: 20px;
+}
+
+#logo {
+  width: 100px;
+  margin-bottom: 20px;
 }
 
 /* Estilo dos campos de input */
@@ -64,23 +65,23 @@ input[type="text"] {
   padding: 10px;
   margin: 15px 0;
   width: 80%;
-  border: 2px solid #00ff00;
+  border: 2px solid #ff0000;
   border-radius: 5px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   font-size: 1.2rem;
 }
 
 input[type="text"]:focus {
   outline: none;
-  border-color: #33cc33;
+  border-color: #ff3333;
 }
 
 /* Botão de consulta */
 button {
   background: transparent;
-  color: #00ff00;
-  border: 2px solid #00ff00;
+  color: #ff0000;
+  border: 2px solid #ff0000;
   padding: 15px 30px;
   font-size: 1.2rem;
   cursor: pointer;
@@ -88,24 +89,34 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
-  background-color: #00ff00;
+  background-color: #ff0000;
   color: black;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+button .btn-icon {
+  width: 20px;
+  margin-right: 10px;
 }
 
 /* Detalhes do IP */
 #ip-details {
   margin-top: 20px;
   text-align: left;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 #ip-result, #location-result, #custom-ip-result {
   margin-top: 10px;
   padding: 10px;
-  background-color: rgba(0, 255, 0, 0.1);
+  background-color: rgba(255, 0, 0, 0.1);
   border-radius: 5px;
   font-size: 1.1rem;
 }
