@@ -1,41 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta IP - Detalhado</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Fundo com GIF -->
-  <div id="background-gif"></div>
-
-  <!-- Tela de Carregamento -->
-  <div id="loading-screen">
-    <div id="loading-text">Aguarde, carregando...</div>
-  </div>
-
-  <!-- Conteúdo Principal -->
-  <div id="main-content" class="hidden">
-    <div id="container">
-      <img src="images/logo.png" alt="Logo" id="logo">
+  <div class="overlay">
+    <div class="container">
+      <img src="assets/logo.png" alt="Logo" class="logo">
       <h1>Consulta IP - Detalhado</h1>
-      <input type="text" id="ip-input" placeholder="Digite um IP para consultar..." />
-      <button id="fetch-ip-btn">
-        <img src="images/button-icon.png" alt="Consultar" class="btn-icon"> Consultar IP
-      </button>
-
-      <div id="ip-details">
-        <h2>Detalhes do IP:</h2>
-        <div id="ip-result"></div>
-        <div id="location-result"></div>
-        <div id="status"></div>
+      <div class="input-group">
+        <input type="text" id="ipInput" placeholder="Digite um IP para consultar...">
+        <button onclick="consultarIP()">CONSULTAR IP</button>
       </div>
-
-      <div id="ai-summary">
-        <h2>Resumo dos Dados do IP:</h2>
-        <div id="ai-summary-result"></div>
+      <div class="result-box">
+        <h2>Detalhes do IP:</h2>
+        <pre id="resultado"></pre>
       </div>
     </div>
   </div>
