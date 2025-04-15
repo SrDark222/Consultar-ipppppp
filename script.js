@@ -9,22 +9,32 @@ function consultarIP() {
 
   resultado.innerText = "Consultando IP...";
 
-  fetch(`http://ip-api.com/json/${ip}?fields=status,message,country,regionName,city,zip,lat,lon,isp,org,as,query`)
+  fetch(`http://ip-api.com/json/${ip}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`)
     .then(response => response.json())
     .then(data => {
       if (data.status === "success") {
         resultado.innerText = `
+=====================================
+       CONSULTA IP COMPLETA
+=====================================
+
 IP: ${data.query}
-País: ${data.country}
-Região: ${data.regionName}
+Continente: ${data.continent} (${data.continentCode})
+País: ${data.country} (${data.countryCode})
+Região: ${data.regionName} (${data.region})
 Cidade: ${data.city}
 CEP: ${data.zip}
+Fuso Horário: ${data.timezone}
+
 Latitude: ${data.lat}
 Longitude: ${data.lon}
-ISP: ${data.isp}
+
+Provedor (ISP): ${data.isp}
 Organização: ${data.org}
-AS: ${data.as}
-        `;
+Sistema Autônomo (AS): ${data.as}
+
+=====================================
+`;
       } else {
         resultado.innerText = "Erro: " + data.message;
       }
